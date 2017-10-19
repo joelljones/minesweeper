@@ -28,3 +28,7 @@ const generateBombBoard = (numberOfRows, numberOfColumns, numberOfBombs) => {
   }
   return board;
 };
+
+const printBoard = board => {
+  console.log(board.map(row => row.join(' | ')).join('\n'));
+};

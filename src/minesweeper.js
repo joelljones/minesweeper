@@ -33,6 +33,34 @@ const generateBombBoard = (numberOfRows, numberOfColumns, numberOfBombs) => {
   return board;
 };
 
+const getNumberOfNeighborBombs = (bombBoard, rowIndex, columnIndex) => {
+  const neighborOffsets = [
+    [-1, -1],
+    [-1, 0],
+    [-1, 1],
+    [0, -1],
+    [0, 1],
+    [1, -1],
+    [1, 0],
+    [1, 1]
+  ];
+  const numberOfRows = bombBoard.length;
+  const numberOfColumns = bombBoard[0].length;
+  let numberOfBombs = 0;
+
+  // return the number of bombs in an adjacent neighbor
+  neighborOffsets.forEach(offset => {
+    const neighborRowIndex = rowIndex + offset[0]; // store the index of a neighboring tile (on a row)
+    const neighborColumnIndex = columnIndex + offset[1]; // store the index of a neighboring tile (on a column)
+    if (neighborRowIndex >= 0 && neighborRowIndex <= numberOfRows && neighborColumnIndex >= 0 && neighborColumnIndex <= numberOfColumns) {
+      if (bombBoard[neighborRowIndex][neighborColumnIndex] == 'B') {
+        numberOfBombs++;
+      }
+    }
+  });
+  return numberOfBombs;
+};
+
 const printBoard = board => {
   console.log(board.map(row => row.join(' | ')).join('\n'));
 };

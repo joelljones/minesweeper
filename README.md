@@ -1,6 +1,6 @@
 # Minesweeper
 
-A terminal-based version of the classic computer game: [Minesweeper](https://en.wikipedia.org/wiki/Minesweeper_(video_game).
+A terminal-based version of the classic computer game: [Minesweeper](https://en.wikipedia.org/wiki/Minesweeper_(video_game)
 
 - The objective is to successfully navigate (or, "clear") a grid of squares without encountering any hidden mines (bombs).
 
